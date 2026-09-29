@@ -1,0 +1,35 @@
+{
+  "name": "chrome-reading-list-mcp",
+  "version": "0.1.0",
+  "description": "MCP server that lets AI assistants (Claude, Cursor, Codex...) read, add, mark and clean up your Chrome reading list.",
+  "type": "module",
+  "bin": {
+    "chrome-reading-list-mcp": "src/cli.js"
+  },
+  "files": [
+    "src",
+    "README.md",
+    "LICENSE"
+  ],
+  "engines": {
+    "node": ">=18"
+  },
+  "scripts": {
+    "test": "node --test test/*.test.js",
+    "test:e2e": "node scripts/e2e.js"
+  },
+  "keywords": [
+    "mcp",
+    "chrome",
+    "reading-list",
+    "claude",
+    "cursor",
+    "model-context-protocol"
+  ],
+  "license": "MIT",
+  "dependencies": {
+    "@modelcontextprotocol/sdk": "^1.31.0",
+    "ws": "^8.22.0",
+    "zod": "^4.6.5"
+  }
+}
