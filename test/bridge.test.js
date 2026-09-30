@@ -8,6 +8,9 @@ import { Bridge } from "../src/bridge.js";
 import { ReadingList } from "../src/readingList.js";
 
 const EXT_ID = "ccclijbaodgdphbciifmfgnihbadlloj";
+// Windows has no POSIX permission bits; files under the user profile are
+// already private through the default ACLs.
+const POSIX = process.platform !== "win32";
 let port = 27000 + Math.floor(Math.random() * 2000);
 let homeDir;
 let cleanup = [];
@@ -94,7 +97,7 @@ test("remove writes a private backup first and restore brings entries back", asy
 
   const backup = JSON.parse(readFileSync(res.backupPath, "utf8"));
   assert.equal(backup.count, 3);
-  assert.equal(statSync(res.backupPath).mode & 0o777, 0o600);
+  if (POSIX) assert.equal(statSync(res.backupPath).mode & 0o777, 0o600);
 
   const restored = await rl.restore(res.backupPath);
   assert.deepEqual(restored.added, ["https://a.example/agents-md"]);
@@ -125,7 +128,7 @@ test("export writes markdown with every entry", async () => {
 
   const res = await rl.export({ format: "markdown" });
   assert.equal(res.count, 3);
-  assert.ok(res.path.endsWith("exports/reading-list-2026-09-29.md"));
+  assert.equal(res.path, join(homeDir, "exports", "reading-list-2026-09-29.md"));
   const md = readFileSync(res.path, "utf8");
   assert.match(md, /## Unread \(2\)/);
   assert.match(md, /- \[x\] \[Rust async book\]\(https:\/\/b\.example\/rust\)/);
@@ -179,5 +182,5 @@ test("token file is created with owner-only permissions", async () => {
   await startBridge();
   const file = join(homeDir, "token");
   assert.ok(existsSync(file));
-  assert.equal(statSync(file).mode & 0o777, 0o600);
+  if (POSIX) assert.equal(statSync(file).mode & 0o777, 0o600);
 });
