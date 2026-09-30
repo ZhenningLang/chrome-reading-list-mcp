@@ -33,7 +33,7 @@ The extension only has the `readingList` permission and only talks to your own c
 **Claude Code**
 
 ```bash
-claude mcp add -s user chrome-reading-list -- npx -y chrome-reading-list-mcp
+claude mcp add -s user chrome-reading-list -- npx -y github:ZhenningLang/chrome-reading-list-mcp
 ```
 
 **Claude Desktop** — Settings → Developer → Edit Config, then add:
@@ -41,7 +41,7 @@ claude mcp add -s user chrome-reading-list -- npx -y chrome-reading-list-mcp
 ```json
 {
   "mcpServers": {
-    "chrome-reading-list": { "command": "npx", "args": ["-y", "chrome-reading-list-mcp"] }
+    "chrome-reading-list": { "command": "npx", "args": ["-y", "github:ZhenningLang/chrome-reading-list-mcp"] }
   }
 }
 ```
@@ -53,7 +53,7 @@ claude mcp add -s user chrome-reading-list -- npx -y chrome-reading-list-mcp
 ```toml
 [mcp_servers.chrome-reading-list]
 command = "npx"
-args = ["-y", "chrome-reading-list-mcp"]
+args = ["-y", "github:ZhenningLang/chrome-reading-list-mcp"]
 ```
 
 Restart the client. That's it.
@@ -61,7 +61,7 @@ Restart the client. That's it.
 ### 3. Check it works
 
 ```bash
-npx -y chrome-reading-list-mcp doctor
+npx -y github:ZhenningLang/chrome-reading-list-mcp doctor
 ```
 
 `OK: connected, 365 entries in the reading list` means you're set.

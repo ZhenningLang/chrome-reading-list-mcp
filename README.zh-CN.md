@@ -33,7 +33,7 @@
 **Claude Code**
 
 ```bash
-claude mcp add -s user chrome-reading-list -- npx -y chrome-reading-list-mcp
+claude mcp add -s user chrome-reading-list -- npx -y github:ZhenningLang/chrome-reading-list-mcp
 ```
 
 **Claude Desktop**：设置 → 开发者 → 编辑配置，加入：
@@ -41,7 +41,7 @@ claude mcp add -s user chrome-reading-list -- npx -y chrome-reading-list-mcp
 ```json
 {
   "mcpServers": {
-    "chrome-reading-list": { "command": "npx", "args": ["-y", "chrome-reading-list-mcp"] }
+    "chrome-reading-list": { "command": "npx", "args": ["-y", "github:ZhenningLang/chrome-reading-list-mcp"] }
   }
 }
 ```
@@ -53,7 +53,7 @@ claude mcp add -s user chrome-reading-list -- npx -y chrome-reading-list-mcp
 ```toml
 [mcp_servers.chrome-reading-list]
 command = "npx"
-args = ["-y", "chrome-reading-list-mcp"]
+args = ["-y", "github:ZhenningLang/chrome-reading-list-mcp"]
 ```
 
 重启客户端即可。
@@ -61,7 +61,7 @@ args = ["-y", "chrome-reading-list-mcp"]
 ### 3. 检查是否连通
 
 ```bash
-npx -y chrome-reading-list-mcp doctor
+npx -y github:ZhenningLang/chrome-reading-list-mcp doctor
 ```
 
 看到 `OK: connected, 365 entries in the reading list` 就说明好了。
