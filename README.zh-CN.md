@@ -4,7 +4,7 @@
 
 让你的 AI 助手读取、整理你的 **Chrome 阅读清单**，也就是侧边栏里"添加到阅读清单"的那些文章。
 
-支持所有 MCP 客户端：Claude Desktop、Claude Code、Cursor、Codex、Windsurf、VS Code 等。
+支持所有 MCP 客户端：Claude Desktop、Claude Code、Cursor、Codex、opencode、Kilo、Windsurf、VS Code 等。
 
 可以这样问它：
 
@@ -55,6 +55,22 @@ claude mcp add -s user chrome-reading-list -- npx -y github:ZhenningLang/chrome-
 command = "npx"
 args = ["-y", "github:ZhenningLang/chrome-reading-list-mcp"]
 ```
+
+**opencode**：写进 `~/.config/opencode/opencode.json`：
+
+```json
+{
+  "mcp": {
+    "chrome-reading-list": {
+      "type": "local",
+      "command": ["npx", "-y", "github:ZhenningLang/chrome-reading-list-mcp"],
+      "enabled": true
+    }
+  }
+}
+```
+
+**Kilo CLI**：同样的内容写进 `~/.config/kilo/kilo.json`。
 
 重启客户端即可。
 

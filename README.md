@@ -4,7 +4,7 @@
 
 Let your AI assistant read and tidy up your **Chrome reading list** — the "Add to reading list" items in Chrome's side panel.
 
-Works with any MCP client: Claude Desktop, Claude Code, Cursor, Codex, Windsurf, VS Code and more.
+Works with any MCP client: Claude Desktop, Claude Code, Cursor, Codex, opencode, Kilo, Windsurf, VS Code and more.
 
 Things you can ask:
 
@@ -55,6 +55,22 @@ claude mcp add -s user chrome-reading-list -- npx -y github:ZhenningLang/chrome-
 command = "npx"
 args = ["-y", "github:ZhenningLang/chrome-reading-list-mcp"]
 ```
+
+**opencode** — add to `~/.config/opencode/opencode.json`:
+
+```json
+{
+  "mcp": {
+    "chrome-reading-list": {
+      "type": "local",
+      "command": ["npx", "-y", "github:ZhenningLang/chrome-reading-list-mcp"],
+      "enabled": true
+    }
+  }
+}
+```
+
+**Kilo CLI** — same block in `~/.config/kilo/kilo.json`.
 
 Restart the client. That's it.
 
