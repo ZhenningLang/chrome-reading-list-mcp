@@ -22,7 +22,7 @@
 ### 1. 装 Chrome 扩展
 
 <!-- 上架 Chrome 应用商店后替换成商店链接 -->
-1. 从[最新发布](../../releases/latest)下载 `extension.zip` 并解压。
+1. 从[最新发布](https://github.com/ZhenningLang/chrome-reading-list-mcp/releases/latest)下载 `extension.zip` 并解压。
 2. 打开 `chrome://extensions`，打开右上角的"开发者模式"。
 3. 点"加载已解压的扩展程序"，选择解压出来的 `extension` 文件夹。
 

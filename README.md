@@ -1,6 +1,6 @@
 # Chrome Reading List MCP
 
-[中文说明](README.zh-CN.md)
+[中文说明](https://github.com/ZhenningLang/chrome-reading-list-mcp/blob/main/README.zh-CN.md)
 
 Let your AI assistant read and tidy up your **Chrome reading list** — the "Add to reading list" items in Chrome's side panel.
 
@@ -22,7 +22,7 @@ You need Chrome 120 or newer and [Node.js](https://nodejs.org) 18 or newer.
 ### 1. Install the Chrome extension
 
 <!-- Replace with the Chrome Web Store link once published. -->
-1. Download `extension.zip` from the [latest release](../../releases/latest) and unzip it.
+1. Download `extension.zip` from the [latest release](https://github.com/ZhenningLang/chrome-reading-list-mcp/releases/latest) and unzip it.
 2. Open `chrome://extensions`, turn on **Developer mode** (top right).
 3. Click **Load unpacked** and pick the unzipped `extension` folder.
 
